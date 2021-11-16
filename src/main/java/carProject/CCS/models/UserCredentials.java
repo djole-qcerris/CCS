@@ -5,13 +5,14 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "third_party")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserCredentials {
+public class UserCredentials implements Serializable {
 
     @Getter @Setter @Id
     private int tpc_id;
