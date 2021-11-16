@@ -1,9 +1,8 @@
 package carProject.CCS.controllers;
 
-import carProject.CCS.dao.ThirdPartyDao;
-import carProject.CCS.models.ThirdParty;
+import carProject.CCS.dao.UserCredentialsDao;
+import carProject.CCS.models.UserCredentials;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,12 +12,12 @@ import java.util.List;
 public class ThirdPartyController {
 
     @Autowired
-    private ThirdPartyDao thirdPartyDao;
+    private UserCredentialsDao userCredentialsDao;
 
 
     @GetMapping(path = "{name}")
-    public ThirdParty getThirdParty(@PathVariable("name") String name) {
-        List<ThirdParty> ltp = thirdPartyDao.findByName(name);
+    public UserCredentials getUserCredentials(@PathVariable("name") String name) {
+        List<UserCredentials> ltp = userCredentialsDao.findByName(name);
         if(!ltp.isEmpty())
             return ltp.get(0);
         return null;

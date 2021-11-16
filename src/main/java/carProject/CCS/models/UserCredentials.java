@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ThirdParty {
+public class UserCredentials {
 
     @Getter @Setter @Id
     private int tpc_id;
